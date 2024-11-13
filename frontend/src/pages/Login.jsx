@@ -20,31 +20,70 @@ const Login = () => {
       setCredentials(prev => ({ ...prev, [e.target.id]: e.target.value }))
    }
 
-   const handleClick = async e => {
-      e.preventDefault()
+   // const handleClick = async e => {
+   //    e.preventDefault()
 
-      dispatch({type:'LOGIN_START'})
+   //    dispatch({type:'LOGIN_START'})
 
+   //    try {
+   //       const res = await fetch(`${BASE_URL}/auth/login`, {
+   //          method:'post',
+   //          headers: {
+   //             'content-type':'application/json'
+   //          },
+   //          credentials:'include',
+   //          body: JSON.stringify(credentials)
+   //       })
+
+   //       const result = await res.json()
+   //       if(!res.ok) alert(result.message)
+   //       console.log(result.data)
+
+   //       dispatch({type:"LOGIN_SUCCESS", payload:result.data})
+   //       navigate('/')
+   //    } catch(err) {
+   //       dispatch({type:"LOGIN_FAILURE", payload:err.message})
+   //    }
+   // }
+   const handleClick = async (e) => {
+      e.preventDefault();
+   
+      dispatch({ type: 'LOGIN_START' });
+   
       try {
          const res = await fetch(`${BASE_URL}/auth/login`, {
-            method:'post',
+            method: 'post',
             headers: {
-               'content-type':'application/json'
+               'Content-Type': 'application/json',
             },
-            credentials:'include',
-            body: JSON.stringify(credentials)
-         })
-
-         const result = await res.json()
-         if(!res.ok) alert(result.message)
-         console.log(result.data)
-
-         dispatch({type:"LOGIN_SUCCESS", payload:result.data})
-         navigate('/')
-      } catch(err) {
-         dispatch({type:"LOGIN_FAILURE", payload:err.message})
+            credentials: 'include',
+            body: JSON.stringify(credentials),
+         });
+   
+         const result = await res.json();
+   
+         if (!res.ok) {
+            alert(result.message);
+            return;
+         }
+   
+         console.log(result.data);
+   
+         dispatch({ type: "LOGIN_SUCCESS", payload: result.data });
+   
+         // Check the role and navigate accordingly
+         if (result.role === 'admin') {
+            navigate('/admin');
+            window.location.reload();
+         } else {
+            navigate('/');
+            window.location.reload();
+         }
+      } catch (err) {
+         dispatch({ type: "LOGIN_FAILURE", payload: err.message });
       }
-   }
+   };
+   
 
    return (
       <section>

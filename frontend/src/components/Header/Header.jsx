@@ -7,7 +7,7 @@ import { AuthContext } from '../../context/AuthContext'
 
 const nav__links = [
    {
-      path: '/home',
+      path: '/',
       display: 'Home'
    },
    {
@@ -28,7 +28,8 @@ const Header = () => {
 
    const logout = () => {
       dispatch({ type: 'LOGOUT' })
-      navigate('/')
+      navigate('/home')
+      window.location.reload();
    }
 
    const stickyHeaderFunc = () => {

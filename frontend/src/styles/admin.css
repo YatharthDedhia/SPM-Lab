@@ -1,0 +1,197 @@
+.create__tour-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+ }
+ 
+ .create__tour-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 0.5rem;
+    background-color: var(--background-color);
+ }
+ 
+ .form__group {
+    display: flex;
+    flex-direction: column;
+ }
+ 
+ .form__group label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+ }
+ 
+ .form__group input,
+ .form__group textarea {
+    padding: 0.75rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 0.5rem;
+    outline: none;
+    font-size: 1rem;
+    color: var(--text-color);
+ }
+ 
+ .form__group input:focus,
+ .form__group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+ }
+ 
+ textarea {
+    resize: vertical;
+    min-height: 150px;
+ }
+ 
+ .btn {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+ }
+ 
+ .btn:hover {
+    background-color: var(--secondary-color);
+ }
+ 
+ /* =============== RESPONSIVE ================ */
+ @media only screen and (max-width: 768px) {
+    .create__tour-form {
+       padding: 1.5rem;
+    }
+ 
+    .create__tour-title {
+       font-size: 1.5rem;
+    }
+ 
+    .form__group label {
+       font-size: 0.9rem;
+    }
+ 
+    .form__group input,
+    .form__group textarea {
+       font-size: 0.9rem;
+    }
+ 
+    .btn {
+       font-size: 0.9rem;
+    }
+ }
+ 
+
+ .admin__tabs {
+    display: flex;
+    margin-bottom: 20px;
+ }
+ 
+ .tab {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #f9f9f9;
+ }
+ 
+ .tab.active {
+    background-color: #007bff;
+    color: #fff;
+ }
+ 
+ /* General styles */
+body {
+    font-family: Arial, sans-serif;
+ }
+ 
+ .admin__tabs {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+ }
+ 
+ .admin__tabs .tab {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+ }
+ 
+ .admin__tabs .tab.active {
+    background-color: #007bff;
+    color: white;
+ }
+ 
+ .create__tour-title, .bookings__title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+ }
+ 
+ /* Bookings section styling */
+ .bookings__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+ }
+ 
+ .booking__card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+ }
+ 
+ .booking__card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+ }
+ 
+ .booking__card p {
+    font-size: 14px;
+    margin: 5px 0;
+ }
+ 
+ .booking__card p strong {
+    color: #007bff;
+ }
+ 
+ /* Form styling */
+ .form__group {
+    margin-bottom: 15px;
+ }
+ 
+ .form__group label {
+    display: block;
+    margin-bottom: 5px;
+ }
+ 
+ .form__group input, .form__group textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+ }
+ 
+ .form__group button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+ }
+ 
+ .form__group button:hover {
+    background-color: #0056b3;
+ }
+ 
